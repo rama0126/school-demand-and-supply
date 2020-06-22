@@ -472,4 +472,4 @@
 {'schoolname': '경기게임마이스터고등학교', 'SIGUN_CD': '41170', 'schoolAdd': '경기도 안양시 동안구 비산동 1101번지 경기글로벌통상고등학교', 'region': '경기도 안양시 동안구', 'GRD1': 47, 'GRD2': 98, 'GRD3': 155, 'SumStu': 300}
 {'schoolname': '근명고등학교', 'SIGUN_CD': '41170', 'schoolAdd': '경기도 안양시 만안구 안양동 708-197번지', 'region': '경기도 안양시 만안구', 'GRD1': 231, 'GRD2': 183, 'GRD3': 234, 'SumStu': 648}
 {'schoolname': '경기스마트고등학교', 'SIGUN_CD': '41390', 'schoolAdd': '경기도 시흥시 정왕동 1522번지', 'region': '경기도 시흥시', 'GRD1': 96, 'GRD2': 81, 'GRD3': 143, 'SumStu': 320}
-{'schoolname': '정현고등학교', 'SIGUN_CD': '41590', 'schoolAdd': '경기도 화성시 동탄산척로 93-10', 'region': '경기도 화성시', 'GRD1': 351, 'GRD2': 0, 'GRD3': 0, 'SumStu': 351}
+{'schoolname': '정현고등학교', 'SIGUN_CD': '41590', 'schoolAdd': '경기도 화성시 산척동 산133-1', 'region': '경기도 화성시', 'GRD1': 351, 'GRD2': 0, 'GRD3': 0, 'SumStu': 351}

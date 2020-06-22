@@ -120,21 +120,7 @@ class synchro_HighInfo_Add():
             #총 학생 수(유급생, 특수학생 제외)
             dic['SumStu']=Num[i]['SumStu']
             self.synchro_values.append(dic)
-        #가평고등학교 AddNaLi[474] GRD1:204, GRD2:209, GRD3:239, SumStu:652
-        dic = {}
-        dic['schoolname'] = Add[474]['schoolname']
-        dic['SIGUN_CD'] = Add[474]['SIGUN_CD']
-        dic['schoolAdd'] = Add[474]['schoolAdd']
-        dic['region']= Add[474]['region']
-        #1학년생 수
-        dic['GRD1']=204
-        #2학년생 수
-        dic['GRD2']=209
-        #3학년생 수
-        dic['GRD3']=239
-        #총 학생 수(유급생, 특수학생 제외)
-        dic['SumStu']=652
-        self.synchro_values.append(dic)
+        
 
         #정현고등학교 NumNaLi[416] Add:경기도 화성시 동탄산척로 93-10
         dic = {}
