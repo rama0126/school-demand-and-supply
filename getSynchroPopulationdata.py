@@ -46,6 +46,7 @@ class synchro_Pop_Per():
                         diic={}
                         diic['region']=self.Po_all_values[ii]['region']
                         diic['Stu_Pop']=int(self.Po_all_values[ii]['population']*(p['per']/100))
+                        diic['Pop']=int(self.Po_all_values[ii]['population'])
                         self.synchro_values.append(diic)
     #csv파일로 저장
     def Save_data_CSV(self):

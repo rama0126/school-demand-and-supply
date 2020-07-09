@@ -1,7 +1,8 @@
+#getStundentsNum.py
 #API : https://openapi.gg.go.kr/Schoolstdntcntsecndhd
 #URL : https://data.gg.go.kr/portal/data/service/selectServicePage.do?page=3&rows=10&sortColumn=&sortDirection=&infId=8GRSB88F2QW4RJ3MG95I23516519&infSeq=2&order=&loc=
 #고등학교 별 학생수 파악
-
+#(구)StuNum.py
 import config
 import requests
 from bs4 import BeautifulSoup

@@ -1,4 +1,6 @@
+#getPercentage.py
 #경기도 내 각 시, 구별 고등학생/인구수 비율
+#(구)Perce.py
 import csv
 class Percen():
     def __init__(self):

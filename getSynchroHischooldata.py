@@ -1,5 +1,9 @@
-import HiIn as HI
-import StuNum as HN
+#getSynchroHischooldata.py
+#getHighschoolInfo(HiIn.py)와 getStudentsNum.py(StuNum.py)에서 얻은 데이터 통합
+#(구) SynHidata.py
+import getHighschoolInfo as HI
+import getStudentsNum as HN
+import csv
 class synchro_HighInfo_Add():
     def __init__(self):
         self.Hn = HN.HighschoolStuNum()
@@ -26,7 +30,7 @@ class synchro_HighInfo_Add():
                     dic['SumStu']=i['SumStu']
                     self.synchro_values.append(dic)
                     break
-    def synchro_data_Save(self):
+    def synchro_data_Save_TXT(self):
         #HighschoolData.txt로 데이터 저장
         f = open("highschooldata\HighschoolData.txt", 'w')
         for i in self.synchro_values:
@@ -122,11 +126,11 @@ class synchro_HighInfo_Add():
             self.synchro_values.append(dic)
         
 
-        #정현고등학교 NumNaLi[416] Add:경기도 화성시 동탄산척로 93-10
+        #정현고등학교 NumNaLi[416] Add:경기도 화성시 산척동 산133-1
         dic = {}
         dic['schoolname'] = Num[416]['schoolname']
         dic['SIGUN_CD'] = Num[416]['SIGUN_CD']
-        dic['schoolAdd'] = '경기도 화성시 동탄산척로 93-10'
+        dic['schoolAdd'] = '경기도 화성시 산척동 산133-1'
         dic['region']= Num[416]['region']
         #1학년생 수
         dic['GRD1']=Num[416]['GRD1']
@@ -137,12 +141,40 @@ class synchro_HighInfo_Add():
         #총 학생 수(유급생, 특수학생 제외)
         dic['SumStu']=Num[416]['SumStu']
         self.synchro_values.append(dic)
-
+    
+    #csv파일로 저장
+    def Save_data_CSV(self):
+        values=self.synchro_values
+        for i in values:
+            a = i['schoolAdd'].split(' ')
+            #행정구역 단위 : 시,군
+            i['city']=a[1]
+            if i['city'] in ['고양시', '성남시', '수원시', '용인시', '안산시', '안양시']:
+                #행정구역 단위 : 구
+                i['district'] = a[2]
+                #행정구역 단위 : 읍면동
+                i['town'] = a[3]
+                
+            else:
+                #행정구역 단위 : 구, '구'가 없으므로 'None'표시
+                i['district'] = 'None'
+                #행정구역 단위 : 읍면동
+                i['town'] = a[2]
+        #values = [{'schoolname': '효성고등학교', 'SIGUN_CD': '41130', 'schoolAdd': '경기도 성남시 수정구 심곡동 321번지 효성 고등학교', 'region': '경기도 성남시 수정구', 'GRD1': 220, 'GRD2': 206, 'GRD3': 253, 'SumStu': 679, 'city': '성남시', 'district': '수정구', 'town': '심곡동'},
+            
+        #csv파일로 저장    
+        fileWrite = open('highschooldata\csvHI.csv', 'w', encoding='euc-kr', newline='')
+        csvWriter = csv.writer(fileWrite)
+        k=values[3].keys()
+        csvWriter.writerow(k)
+        for i in values:
+            j = i.values()
+            csvWriter.writerow(j)
+        fileWrite.close
 if __name__ == "__main__":        
     a = synchro_HighInfo_Add()
-    print("1")
     a.synchro()
-    print("2")
     a.FindError()
-    print("3")
-    a.synchro_data_Save()
+    a.synchro_data_Save_TXT()
+    a.Save_data_CSV()
+    

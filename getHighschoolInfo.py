@@ -1,3 +1,5 @@
+#getHighschoolInfo.py
+#(구)HiIn.py
 #URL : https://data.gg.go.kr/portal/data/service/selectServicePage.do?page=1&rows=10&sortColumn=&sortDirection=&infId=YB0SYA9FJYDF279AS9AQ20544808&infSeq=3&order=&loc=&searchWord=%EA%B3%A0%EB%93%B1%ED%95%99%EA%B5%90+%ED%98%84%ED%99%A9
 #API : https://openapi.gg.go.kr/HgschlM?
 #경기도 고등학교 현황
@@ -33,10 +35,8 @@ class HighschoolInfo:
             time.sleep(0.5)
 
 if __name__ == "__main__":        
-    a = RegionCode()
+    a = HighschoolInfo()
     a.getSchoolInfo()
-    a.SIGUN_CD_Synchro()
     print(a.all_values)
     #값 :474
     print(len(a.all_values))
-    print(a.SIGUN_CD_ADD)

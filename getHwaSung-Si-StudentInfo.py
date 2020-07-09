@@ -1,4 +1,6 @@
+#getHwaSun-Si-StudentInfo.py
 #화성시 17~19세 인구수 데이터
+#(구)HwStu.py
 import csv
 class HwStu():
     def __init__(self):
